@@ -1,13 +1,38 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { DATAInterface } from "../../../../utils/data";
+import {
+  FONT_FAMILY_SEMI_BOLD,
+  FONT_SIZE_SMALL,
+} from "../../../../styles/styles";
+import { useNavigation } from "@react-navigation/native";
 
-export const Item: React.FC<DATAInterface> = ({ imagem, titulo }) => {
+export const Item: React.FC<DATAInterface> = ({
+  imagem,
+  titulo,
+  itemDesc,
+  itemName,
+  preco,
+  id,
+}) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.containerItem}>
+    <TouchableOpacity
+      style={styles.containerItem}
+      onPress={() =>
+        navigation.navigate("DetalhesProduto", {
+          imagem,
+          titulo,
+          itemDesc,
+          itemName,
+          preco,
+          id,
+        })
+      }
+    >
       <Image source={imagem} style={styles.imagem} resizeMode="contain" />
       <Text style={styles.texto}>{titulo}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -23,8 +48,8 @@ const styles = StyleSheet.create({
   },
   texto: {
     marginTop: 8,
-    fontFamily: "OpenSans-SemiBold",
-    fontSize: 14,
+    fontFamily: FONT_FAMILY_SEMI_BOLD,
+    fontSize: FONT_SIZE_SMALL,
     color: "#848486",
   },
   imagem: {

@@ -1,19 +1,20 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
+import { Sacola } from "../../../../components/Sacola";
+import {
+  COR_DE_FUNDO,
+  FONT_FAMILY_REGULAR,
+  FONT_FAMILY_BOLD,
+} from "../../../../styles/styles";
 
 const Cabecalho = () => {
   return (
     <>
       <View style={styles.containerTitulo}>
         <Text style={styles.titulo}>Lighteria</Text>
-        <View style={styles.containerSacola}>
-          <Image
-            source={require("./../../../../../assets/images/icone-sacola.png")}
-            style={styles.imagem}
-          />
-        </View>
+        <Sacola />
       </View>
-      <View style={styles.containerDescricao}>
+      <View>
         <View style={styles.separador} />
         <View style={styles.containerTexto}>
           <Text style={styles.texto}>Categorias</Text>
@@ -33,22 +34,10 @@ const styles = StyleSheet.create({
   },
 
   titulo: {
-    fontFamily: "OpenSans-Bold",
+    fontFamily: FONT_FAMILY_BOLD,
     fontSize: 28,
   },
-  containerSacola: {
-    backgroundColor: "#fff",
-    padding: 18,
-    borderRadius: 30,
-  },
-  imagem: {
-    height: 30,
-    width: 30,
-  },
 
-  containerDescricao: {
-    // paddingHorizontal: 24,
-  },
   separador: {
     borderWidth: 0.5,
     borderColor: "#A1A5AA",
@@ -61,9 +50,9 @@ const styles = StyleSheet.create({
 
   texto: {
     padding: 34,
-    backgroundColor: "#F4F0F4",
+    backgroundColor: COR_DE_FUNDO,
     fontSize: 16,
-    fontFamily: "OpenSans-Regular",
+    fontFamily: FONT_FAMILY_REGULAR,
     color: "#A1A5AA",
   },
 });

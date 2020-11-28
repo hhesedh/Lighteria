@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View, StyleSheet } from "react-native";
+import { FlatList } from "react-native";
 import { DATA } from "../../utils/data";
 import Cabecalho from "./components/Cabecalho";
 import { Item } from "./components/Produto";

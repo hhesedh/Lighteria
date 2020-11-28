@@ -5,13 +5,8 @@ import * as Font from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import ListaProdutos from "./src/views/ListaProdutos";
-
-const customFonts = {
-  "OpenSans-ExtraBold": require("./assets/fonts/OpenSans-ExtraBold.ttf"),
-  "OpenSans-Regular": require("./assets/fonts/OpenSans-Regular.ttf"),
-  "OpenSans-SemiBold": require("./assets/fonts/OpenSans-SemiBold.ttf"),
-  "OpenSans-Bold": require("./assets/fonts/OpenSans-Bold.ttf"),
-};
+import { DetalhesProduto } from "./src/views/DetalhesProduto";
+import { customFonts } from "./src/styles/styles";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +24,11 @@ const App = () => {
           <Stack.Screen
             name="ListaProdutos"
             component={ListaProdutos}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="DetalhesProduto"
+            component={DetalhesProduto}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
