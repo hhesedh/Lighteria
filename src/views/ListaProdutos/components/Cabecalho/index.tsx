@@ -28,11 +28,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 24,
+    paddingVertical: 24,
+    paddingHorizontal: 6,
   },
 
   titulo: {
-    fontFamily: "OpenSans-ExtraBold",
+    fontFamily: "OpenSans-Bold",
     fontSize: 28,
   },
   containerSacola: {
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   },
 
   containerDescricao: {
-    paddingHorizontal: 24,
+    // paddingHorizontal: 24,
   },
   separador: {
     borderWidth: 0.5,
