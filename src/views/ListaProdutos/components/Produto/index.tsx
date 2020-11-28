@@ -14,6 +14,7 @@ export const Item: React.FC<DATAInterface> = ({
   itemName,
   preco,
   id,
+  estudio,
 }) => {
   const navigation = useNavigation();
   return (
@@ -27,6 +28,7 @@ export const Item: React.FC<DATAInterface> = ({
           itemName,
           preco,
           id,
+          estudio,
         })
       }
     >
