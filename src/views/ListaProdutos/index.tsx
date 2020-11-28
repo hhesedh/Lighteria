@@ -6,22 +6,15 @@ import { Item } from "./components/Produto";
 
 const ListaProdutos = () => {
   return (
-    <View style={styles.containerItem}>
-      <FlatList
-        numColumns={2}
-        data={DATA}
-        renderItem={({ item }) => <Item {...item} />}
-        keyExtractor={(item) => item.id}
-        ListHeaderComponent={<Cabecalho />}
-        contentContainerStyle={{ marginHorizontal: 24 }}
-      />
-    </View>
+    <FlatList
+      numColumns={2}
+      data={DATA}
+      renderItem={({ item }) => <Item {...item} />}
+      keyExtractor={(item) => item.id}
+      ListHeaderComponent={<Cabecalho />}
+      contentContainerStyle={{ marginHorizontal: 24, paddingBottom: 50 }}
+    />
   );
 };
 
-const styles = StyleSheet.create({
-  containerItem: {
-    marginBottom: 20,
-  },
-});
 export default ListaProdutos;

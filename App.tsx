@@ -2,6 +2,8 @@ import { AppLoading } from "expo";
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import * as Font from "expo-font";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import ListaProdutos from "./src/views/ListaProdutos";
 
 const customFonts = {
@@ -11,6 +13,8 @@ const customFonts = {
   "OpenSans-Bold": require("./assets/fonts/OpenSans-Bold.ttf"),
 };
 
+const Stack = createStackNavigator();
+
 const App = () => {
   const [loaded] = Font.useFonts(customFonts);
 
@@ -19,9 +23,17 @@ const App = () => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ListaProdutos />
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={styles.container}>
+        <Stack.Navigator initialRouteName="ListaProdutos">
+          <Stack.Screen
+            name="ListaProdutos"
+            component={ListaProdutos}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
