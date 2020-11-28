@@ -5,6 +5,7 @@ import * as Font from "expo-font";
 
 const customFonts = {
   "OpenSans-ExtraBold": require("./assets/fonts/OpenSans-ExtraBold.ttf"),
+  "OpenSans-Regular": require("./assets/fonts/OpenSans-Regular.ttf"),
 };
 
 const App = () => {
@@ -25,17 +26,26 @@ const App = () => {
           />
         </View>
       </View>
+      <View style={styles.containerDescricao}>
+        <View style={styles.separador} />
+        <View style={styles.containerTexto}>
+          <Text style={styles.texto}>Categorias</Text>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f4f0f4" },
+  container: {
+    flex: 1,
+    backgroundColor: "#f4f0f4",
+  },
   containerTitulo: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 24,
+    padding: 24,
   },
 
   titulo: {
@@ -50,6 +60,27 @@ const styles = StyleSheet.create({
   imagem: {
     height: 30,
     width: 30,
+  },
+
+  containerDescricao: {
+    paddingHorizontal: 24,
+  },
+  separador: {
+    borderWidth: 0.5,
+    borderColor: "#A1A5AA",
+  },
+  containerTexto: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: -46,
+  },
+
+  texto: {
+    padding: 34,
+    backgroundColor: "#F4F0F4",
+    fontSize: 16,
+    fontFamily: "OpenSans-Regular",
+    color: "#A1A5AA",
   },
 });
 
