@@ -17,7 +17,6 @@ export const DetalhesProduto = ({ route }: any) => {
   }: DATAInterface = route.params;
   return (
     <View style={styles.container}>
-      <Text>{titulo}</Text>
       <Background />
       <DescricaoItem
         imagem={imagem}
